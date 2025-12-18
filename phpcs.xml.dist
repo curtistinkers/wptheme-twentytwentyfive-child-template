@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ruleset name="WordPressCodingStandards">
+    <description>WordPress coding standards for plugin files and PSR-12 coding standards for test files.</description>
+
+    <!-- Apply PSR-12 coding standard except where overridden -->
+    <rule ref="PSR12"/>
+
+    <!-- Apply WordPress coding standards -->
+    <rule ref="WordPress" />
+
+    <!-- Override conflicting code standards on WordPress theme files -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed">
+        <exclude-pattern>/functions.php</exclude-pattern>
+        <exclude-pattern>/patterns/*</exclude-pattern>
+    </rule>
+
+    <!-- Override conflicting code standards on WordPress theme files -->
+    <rule ref="PSR2.Methods.FunctionCallSignature">
+        <exclude-pattern>/functions.php</exclude-pattern>
+        <exclude-pattern>/patterns/*</exclude-pattern>
+    </rule>
+
+    <!-- Override conflicting code standards on WordPress theme files -->
+    <rule ref="PSR12.ControlStructures.ControlStructureSpacing">
+        <exclude-pattern>/functions.php</exclude-pattern>
+        <exclude-pattern>/patterns/*</exclude-pattern>
+    </rule>
+
+    <!-- Ignore side effects warning for WordPress theme function file -->
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>/functions.php</exclude-pattern>
+    </rule>
+
+    <!-- Override line-length standards on WordPress theme pattern files -->
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <exclude-pattern>/patterns/*</exclude-pattern>
+    </rule>
+
+    <!-- Enable color output -->
+    <arg name="colors" />
+
+    <!-- Show progress -->
+    <arg value="ps" />
+
+    <!-- Define the directories to be checked -->
+    <arg name="encoding" value="utf8"/>
+    <arg name="extensions" value="php"/>
+    <file>.</file>
+
+    <!-- Exclude the vendor directory -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/report/*</exclude-pattern>
+    <exclude-pattern>*/.phpunit.cache/*</exclude-pattern>
+</ruleset>

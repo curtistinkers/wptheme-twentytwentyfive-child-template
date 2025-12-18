@@ -1,0 +1,45 @@
+{
+    "name": "cblumer/wptheme-twentytwentyfive-child-template",
+    "description": "A child theme template for the TwentyTwenty-Five WordPress theme",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cblumer\\WpthemeTwentytwentyfiveChildTemplate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "curtistinkers",
+            "email": "curtistinkers.commit@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/php-code-coverage": "^12.5",
+        "szepeviktor/phpstan-wordpress": "^2.0",
+        "wp-coding-standards/wpcs": "^3.3"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "phpunit": "phpunit",
+        "phpstan": "phpstan analyse",
+        "lint": "@phpcs",
+        "lint:fix": "@phpcbf",
+        "test": "@phpunit",
+        "test:coverage": "@phpunit --coverage-html report/coverage",
+    	"test:full": ["@lint", "@phpstan", "@test"]
+    }
+}

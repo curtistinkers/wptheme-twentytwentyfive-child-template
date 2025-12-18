@@ -1,0 +1,9 @@
+parameters:
+	level: max
+	paths:
+		- functions.php
+		- patterns/
+
+	checkTooWideReturnTypesInProtectedAndPublicMethods: true
+	checkUninitializedProperties: true
+	treatPhpDocTypesAsCertain: false
