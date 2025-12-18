@@ -30,11 +30,14 @@ done
 
 for tag in "${TAGS[@]}"; do
   if [ "${tag}" = "%text-domain%" ]; then
-    read -rp "Replacement for ${tag} (leave empty to skip): " value
-    if [ -z "$value" ]; then
-      echo "Skipping ${tag}";
-      continue
-    fi
+    # text-domain is required; keep prompting until provided
+    value=""
+    while [ -z "$value" ]; do
+      read -rp "Replacement for ${tag} (required): " value
+      if [ -z "$value" ]; then
+        echo "Value required for ${tag}."
+      fi
+    done
 
     # generate function-name: replace non-alnum with underscore, collapse underscores
     function_name=$(echo "$value" | sed 's/[^a-zA-Z0-9]/_/g' | sed 's/_\+/_/g' | sed 's/^_//; s/_$//')
@@ -63,11 +66,14 @@ for tag in "${TAGS[@]}"; do
     continue
   fi
 
-  read -rp "Replacement for ${tag} (leave empty to skip): " value
-  if [ -z "$value" ]; then
-    echo "Skipping ${tag}";
-    continue
-  fi
+  # For all other tags: require non-empty input
+  value=""
+  while [ -z "$value" ]; do
+    read -rp "Replacement for ${tag} (required): " value
+    if [ -z "$value" ]; then
+      echo "Value required for ${tag}."
+    fi
+  done
 
   for f in "${FILES[@]}"; do
     if [ -f "$f" ]; then
