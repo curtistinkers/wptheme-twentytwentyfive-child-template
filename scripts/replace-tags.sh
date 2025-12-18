@@ -93,7 +93,7 @@ done
 
 # If pretty-name and description were provided, overwrite README.md
 if [ -n "${pretty_name:-}" ] && [ -n "${description:-}" ]; then
-  printf '#%s\n\n%s\n' "$pretty_name" "$description" > README.md
+  printf '# %s\n\n%s\n' "$pretty_name" "$description" > README.md
   echo "README.md written with pretty-name and description."
 fi
 
