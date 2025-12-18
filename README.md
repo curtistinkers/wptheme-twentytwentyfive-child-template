@@ -1,8 +1,7 @@
-# `replace-tags` script usage
+# WordPress Child Theme Generator
 
-This script replaces placeholder tags in key files to quickly scaffold a new WordPress child theme.
-
-The `scripts/` folder may be deleted after use if desired.
+Teh `replace-tags` script script replaces placeholder tags in key files to quickly scaffold a new WordPress child
+theme. The `scripts/` folder may be deleted after use if desired.
 
 ## Requirements
 
@@ -33,8 +32,7 @@ wsl bash scripts/replace-tags.sh
 
 ## Notes
 
-- The script prompts for each placeholder and performs in-place replacements in
-  the files:
+- The script prompts for each placeholder and performs in-place replacements in the files:
   - `composer.json`
   - `functions.php`
   - `style.css`
