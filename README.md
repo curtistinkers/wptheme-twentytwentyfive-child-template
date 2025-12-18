@@ -3,7 +3,7 @@
 This script helps replace placeholder tags in key files of this WordPress theme
 template to quickly scaffold a new child theme.
 
-The script can be deleted after use.
+The scripts folder may be deleted after use if desired.
 
 ## Requirements
 
@@ -24,12 +24,6 @@ Run from PowerShell using WSL (if WSL is installed):
 wsl bash scripts/replace-tags.sh
 ```
 
-## Example
-
-1. Run `bash replace-tags.sh`.
-2. When prompted for `%text-domain%`, type `my-text-domain` and press Enter.
-3. Repeat for other placeholders.
-
 ## Notes
 
 - The script prompts for each placeholder and performs in-place replacements in the files:
@@ -45,7 +39,7 @@ wsl bash scripts/replace-tags.sh
 
 ### Placeholders
 
-- `%text-domain%`: The text domain for the theme.
+- `%text-domain%`: The text domain for the theme in kebab case (e.g., `my-really-cool-theme`).
 - `%description%`: Theme description.
 - `%author-name%`: Author's name.
 - `%author-email%`: Author's email.
