@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-if ( ! function_exists( '%text-domain%_get_primary_site_name' ) ) :
+if ( ! function_exists( '%function-name%_get_primary_site_name' ) ) :
 
 	/**
 	 * Get the primary site name
@@ -21,7 +21,7 @@ if ( ! function_exists( '%text-domain%_get_primary_site_name' ) ) :
 	 *
 	 * @return string The primary site name or the current site name if not in a multisite.
 	 */
-	function %text-domain%_get_primary_site_name(): string {
+	function %function-name%_get_primary_site_name(): string {
 
 		if ( ! function_exists( 'get_site' ) ) {
 			$site_name = get_bloginfo( 'name' );
@@ -39,9 +39,9 @@ if ( ! function_exists( '%text-domain%_get_primary_site_name' ) ) :
 endif;
 
 // Enqueues the theme stylesheet on the front-end.
-add_action( 'wp_enqueue_scripts', '%text-domain%_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', '%function-name%_enqueue_styles' );
 
-if ( ! function_exists( '%text-domain%_enqueue_styles' ) ) :
+if ( ! function_exists( '%function-name%_enqueue_styles' ) ) :
 
 	/**
 	 * Enqueues the theme stylesheet for %pretty-name% and the parent Twenty Twenty-Five theme.
@@ -50,7 +50,7 @@ if ( ! function_exists( '%text-domain%_enqueue_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function %text-domain%_enqueue_styles(): void {
+	function %function-name%_enqueue_styles(): void {
 		$suffix = SCRIPT_DEBUG ? '' : '.min';
 		$src    = 'style' . $suffix . '.css';
 
@@ -71,9 +71,9 @@ if ( ! function_exists( '%text-domain%_enqueue_styles' ) ) :
 endif;
 
 // Unregister Twenty Twenty-Five block patterns that are overridden by %pretty-name%.
-add_action( 'init', '%text-domain%_unregister_twentytwentyfive_block_patterns' );
+add_action( 'init', '%function-name%_unregister_twentytwentyfive_block_patterns' );
 
-if ( ! function_exists( '%text-domain%_unregister_twentytwentyfive_block_patterns' ) ) :
+if ( ! function_exists( '%function-name%_unregister_twentytwentyfive_block_patterns' ) ) :
 
 	/**
 	 * Unregister Twenty Twenty-Five block patterns that are overridden by %pretty-name%.
@@ -82,15 +82,15 @@ if ( ! function_exists( '%text-domain%_unregister_twentytwentyfive_block_pattern
 	 *
 	 * @return void
 	 */
-	function %text-domain%_unregister_twentytwentyfive_block_patterns(): void {
+	function %function-name%_unregister_twentytwentyfive_block_patterns(): void {
 		// unregister_block_pattern( 'twentytwentyfive/footer' );
 	}
 endif;
 
 // Add custom template types for %pretty-name%.
-add_filter( 'default_template_types', '%text-domain%_add_custom_template_types', 10, 1 );
+add_filter( 'default_template_types', '%function-name%_add_custom_template_types', 10, 1 );
 
-if ( ! function_exists( '%text-domain%_add_custom_template_types' ) ) :
+if ( ! function_exists( '%function-name%_add_custom_template_types' ) ) :
 
 	/**
 	 * Add custom template types for %pretty-name%.
@@ -101,7 +101,7 @@ if ( ! function_exists( '%text-domain%_add_custom_template_types' ) ) :
 	 *
 	 * @return array<array<string, string>> The modified template types.
 	 */
-	function %text-domain%_add_custom_template_types( array $templates ): array {
+	function %function-name%_add_custom_template_types( array $templates ): array {
 
 		// $templates['page-example'] = array(
 		// 	'title'       => __( 'Example page', '%text-domain%' ),
@@ -113,9 +113,9 @@ if ( ! function_exists( '%text-domain%_add_custom_template_types' ) ) :
 endif;
 
 // Render shortcodes in block content.
-add_filter( 'render_block', '%text-domain%_render_shortcodes_in_blocks', 10, 1 );
+add_filter( 'render_block', '%function-name%_render_shortcodes_in_blocks', 10, 1 );
 
-if ( ! function_exists( '%text-domain%_render_shortcodes_in_blocks' ) ) :
+if ( ! function_exists( '%function-name%_render_shortcodes_in_blocks' ) ) :
 
 	/**
 	 * Render shortcodes in block content.
@@ -126,16 +126,16 @@ if ( ! function_exists( '%text-domain%_render_shortcodes_in_blocks' ) ) :
 	 *
 	 * @return string The block content with shortcodes rendered.
 	 */
-	function %text-domain%_render_shortcodes_in_blocks( string $block_content ): string {
+	function %function-name%_render_shortcodes_in_blocks( string $block_content ): string {
 
 		return do_shortcode( $block_content );
 	}
 endif;
 
 // Register %pretty-name% block pattern categories.
-add_action( 'init', '%text-domain%_register_pattern_categories' );
+add_action( 'init', '%function-name%_register_pattern_categories' );
 
-if ( ! function_exists( '%text-domain%_register_pattern_categories' ) ) :
+if ( ! function_exists( '%function-name%_register_pattern_categories' ) ) :
 
 	/**
 	 * Register %pretty-name% block pattern categories.
@@ -144,7 +144,7 @@ if ( ! function_exists( '%text-domain%_register_pattern_categories' ) ) :
 	 *
 	 * @return void
 	 */
-	function %text-domain%_register_pattern_categories(): void {
+	function %function-name%_register_pattern_categories(): void {
 
 		register_block_pattern_category(
 			'%text-domain%/custom',

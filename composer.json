@@ -6,7 +6,8 @@
     "authors": [
         {
             "name": "%author-name%",
-            "email": "%author-email%"
+            "email": "%author-email%",
+			"homepage": "%author-homepage%"
         }
     ],
     "minimum-stability": "dev",
