@@ -5,7 +5,8 @@
         "blogname",
         "multisite",
         "phpcbf",
-        "phpcs"
+        "phpcs",
+        "twentytwentyfive"
     ],
 	"files.associations": {
 		"LICENSE": "plaintext",
