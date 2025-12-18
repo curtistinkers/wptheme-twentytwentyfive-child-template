@@ -131,4 +131,7 @@ EOF
 
 fi
 
+echo "Removing script file: $0"
+rm -- "$0"
+
 echo "Done."
