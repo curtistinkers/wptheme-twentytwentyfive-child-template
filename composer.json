@@ -2,22 +2,29 @@
     "name": "%author-name%/%text-domain%",
     "description": "%description%",
     "type": "wordpress-theme",
+	"keywords": [ "wordpress-theme", "theme-template" ],
+	"homepage": "https://github.com/%author-name%/%text-domain%",
+	"readme": "README.md",
     "license": "MIT",
     "authors": [
         {
             "name": "%author-name%",
-            "email": "%author-email%",
-			"homepage": "%author-homepage%"
+			"homepage": "%author-homepage%",
+			"role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+	"support": {
+        "issues": "https://github.com/%author-name%/%text-domain%/issues",
+        "source": "https://github.com/%author-name%/%text-domain%"
+    },
     "require-dev": {
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-strict-rules": "^2.0",
         "szepeviktor/phpstan-wordpress": "^2.0",
         "wp-coding-standards/wpcs": "^3.3"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "optimize-autoloader": true,
         "sort-packages": true,
@@ -33,5 +40,19 @@
         "lint": "@phpcs",
         "lint:fix": "@phpcbf",
     	"test": ["@lint", "@phpstan"]
+    },
+	"archive": {
+        "exclude": [
+			"/.github/",
+			"/.vscode/",
+			"/scripts/",
+			"/.editorconfig",
+			"/.gitattributes",
+			"/.gitignore",
+			"/composer.json",
+			"/composer.lock",
+			"/phpstan.neon.dist",
+			"/phpcs.xml.dist"
+		]
     }
 }
