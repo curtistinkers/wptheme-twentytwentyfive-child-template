@@ -15,7 +15,6 @@
     "require-dev": {
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-strict-rules": "^2.0",
-        "phpunit/php-code-coverage": "^12.5",
         "szepeviktor/phpstan-wordpress": "^2.0",
         "wp-coding-standards/wpcs": "^3.3"
     },
@@ -30,12 +29,9 @@
     "scripts": {
         "phpcs": "phpcs",
         "phpcbf": "phpcbf",
-        "phpunit": "phpunit",
         "phpstan": "phpstan analyse",
         "lint": "@phpcs",
         "lint:fix": "@phpcbf",
-        "test": "@phpunit",
-        "test:coverage": "@phpunit --coverage-html report/coverage",
-    	"test:full": ["@lint", "@phpstan", "@test"]
+    	"test": ["@lint", "@phpstan"]
     }
 }
