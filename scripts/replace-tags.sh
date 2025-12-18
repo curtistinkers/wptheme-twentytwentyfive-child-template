@@ -101,7 +101,7 @@ if [ -n "${pretty_name:-}" ] &&
   [ -n "${function_name:-}" ] &&
   [ -n "${class_name:-}" ]; then
 
-  cp README.md scripts/replace-tags.md
+  echo "Overwriting README.md with provided information."
 
 cat << EOF | tee README.md > /dev/null
 # $pretty_name
