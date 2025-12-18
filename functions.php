@@ -83,7 +83,10 @@ if ( ! function_exists( '%function-name%_unregister_twentytwentyfive_block_patte
 	 * @return void
 	 */
 	function %function-name%_unregister_twentytwentyfive_block_patterns(): void {
+
+		// phpcs:disable
 		// unregister_block_pattern( 'twentytwentyfive/footer' );
+		// phpcs:enable
 	}
 endif;
 
@@ -103,10 +106,12 @@ if ( ! function_exists( '%function-name%_add_custom_template_types' ) ) :
 	 */
 	function %function-name%_add_custom_template_types( array $templates ): array {
 
+		// phpcs:disable
 		// $templates['page-example'] = array(
 		// 	'title'       => __( 'Example page', '%text-domain%' ),
 		// 	'description' => __( 'Used as an example custom page.', '%text-domain%' ),
 		// );
+		// phpcs:enable
 
 		return $templates;
 	}
