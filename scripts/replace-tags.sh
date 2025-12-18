@@ -4,7 +4,7 @@ set -euo pipefail
 # Simple tag replacement script for this repo
 # Scans a set of files and replaces placeholder tags with user-provided values.
 
-FILES=(composer.json functions.php LICENSE README.md style.css theme.json)
+FILES=(composer.json functions.php LICENSE style.css theme.json)
 
 TAGS=(
   "%text-domain%"
