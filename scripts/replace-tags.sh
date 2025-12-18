@@ -42,16 +42,14 @@ for tag in "${TAGS[@]}"; do
     # generate function-name: replace non-alnum with underscore, collapse underscores
     function_name=$(echo "$value" | sed 's/[^a-zA-Z0-9]/_/g' | sed 's/_\+/_/g' | sed 's/^_//; s/_$//')
 
-    # generate pascal-case: split on non-alnum, capitalize parts
-    IFS=' ' read -r -a parts <<< "$(echo "$value" | sed 's/[^a-zA-Z0-9]/ /g')"
-    pascal_case=""
-    for p in "${parts[@]}"; do
-      if [ -n "$p" ]; then
-        first=$(echo "${p:0:1}" | tr '[:lower:]' '[:upper:]')
-        rest=$(echo "${p:1}" | tr '[:upper:]' '[:lower:]')
-        pascal_case+="${first}${rest}"
-      fi
-    done
+	# generate pascal-case: treat %text-domain% as kebab-case (words separated by '-')
+	# normalize: lowercase and replace non-alnum with '-' so separators are consistent
+	normalized=$(echo "$value" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]/-/g')
+	IFS='-' read -r -a parts <<< "$normalized"
+	pascal_case=""
+	for part in "${parts[@]}"; do
+	  [[ -n "$part" ]] && pascal_case+="${part^}"
+	done
 
     # perform replacements for text-domain, function-name, and pascal-case
     for f in "${FILES[@]}"; do
