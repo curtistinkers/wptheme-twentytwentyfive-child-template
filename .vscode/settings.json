@@ -1,0 +1,15 @@
+{
+    "cSpell.words": [
+        "analyse",
+        "bloginfo",
+        "blogname",
+        "multisite",
+        "phpcbf",
+        "phpcs"
+    ],
+	"files.associations": {
+		"LICENSE": "plaintext",
+		"*.neon.dist": "neon",
+		"*.xml.dist": "xml"
+	}
+}
