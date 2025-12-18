@@ -1,17 +1,12 @@
 {
-    "name": "cblumer/wptheme-twentytwentyfive-child-template",
-    "description": "A child theme template for the TwentyTwenty-Five WordPress theme",
+    "name": "%author-name%/%text-domain%",
+    "description": "%description%",
     "type": "wordpress-theme",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Cblumer\\WpthemeTwentytwentyfiveChildTemplate\\": "src/"
-        }
-    },
     "authors": [
         {
-            "name": "curtistinkers",
-            "email": "curtistinkers.commit@gmail.com"
+            "name": "%author-name%",
+            "email": "%author-email%"
         }
     ],
     "minimum-stability": "dev",

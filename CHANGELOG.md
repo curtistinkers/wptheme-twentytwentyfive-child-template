@@ -9,10 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Introduced initial project structure and license.
-- Created README.md with project overview.
-- Added composer.json file for package management.
-- Set up .gitignore to exclude unnecessary files from version control.
-- Added static analysis configuration files for code quality checks.
-- Add code quality tools configuration.
-- Added code coverage tools configuration.
+- Created `README.md` with project overview.
+- Added `composer.json` file for package management.
+- Set up `.gitignore` to exclude unnecessary files from version control.
+- Added `phpstan.neon.dist` static analysis configuration files.
+- Added `phpcs.xml.dist` code quality tools configuration.
+- Added `phpunit.xml.dist` code coverage tools configuration.
+- Added child theme `style.css` with metadata.
+- Added `theme.json` for theme configuration.
+- Added `vscode/settings.json` for VSCode environment configuration.
+- Added `.editorconfig` for consistent coding styles.
+- Added `LICENSE` file with MIT license.
+- Added `functions.php` with basic helper functions.
