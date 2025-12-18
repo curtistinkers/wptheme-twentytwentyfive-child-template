@@ -75,6 +75,13 @@ for tag in "${TAGS[@]}"; do
     fi
   done
 
+  # Store some tag values for later use (README overwrite)
+  if [ "${tag}" = "%pretty-name%" ]; then
+    pretty_name="$value"
+  elif [ "${tag}" = "%description%" ]; then
+    description="$value"
+  fi
+
   for f in "${FILES[@]}"; do
     if [ -f "$f" ]; then
       REPL="$value" perl -0777 -i -pe 's/\Q'"${tag}"'\E/$ENV{REPL}/g' "$f"
