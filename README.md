@@ -46,4 +46,4 @@ wsl bash scripts/replace-tags.sh
 - `%author-homepage%`: Author's homepage URL.
 - `%year%`: Current year (auto-generated).
 - `%function-name%`: Function name derived from text domain (not prompted).
-- `%pascal-case%`: PascalCase version of text domain (not prompted).
+- `%class-name%`: WordPress standard class name format derived from text domain (not prompted).

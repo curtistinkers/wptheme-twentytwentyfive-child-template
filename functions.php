@@ -4,7 +4,7 @@
  *
  * This file contains the functions and definitions for the %pretty-name% WordPress child theme.
  *
- * @package %pascal-case%
+ * @package %class-name%
  * @since %pretty-name% 0.1.0
  */
 
