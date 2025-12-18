@@ -1,0 +1,7 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "%pretty-name%",
+	"slug": "%text-domain%",
+	"description": "%description%"
+}
